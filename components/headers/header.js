@@ -1,16 +1,17 @@
-import React, { useState } from "react"
-import styled from "styled-components"
-import { Container, Flex } from "components/layoutComponents"
-import { IoMdArrowDropdown } from "react-icons/io"
-import { FaPhone } from "react-icons/fa"
-import { MdLocationOn, MdOutlineEmail } from "react-icons/md"
-import Link from "next/link"
-import Image from "next/image"
+import React, { useState } from "react";
+import styled from "styled-components";
+import { Container, Flex } from "components/layoutComponents";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { FaPhone } from "react-icons/fa";
+import { MdLocationOn, MdOutlineEmail } from "react-icons/md";
+import Link from "next/link";
+import Image from "next/image";
+import { ButtonInline } from "../buttons";
 
 const device = {
   sm: "18em",
-  md: "56em",
-}
+  md: "80em",
+};
 
 const Header = styled.div`
   position: fixed;
@@ -18,11 +19,11 @@ const Header = styled.div`
   top: 0;
   left: 0;
   right: 0;
-`
+`;
 
 const Headertop = styled.div`
   padding: 1em 0;
-  background: var(--clr-accent);
+  background: #90ee80;
 
   ul {
     display: flex;
@@ -44,7 +45,7 @@ const Headertop = styled.div`
       margin-left: 1.5em;
     }
   }
-`
+`;
 
 const NavLinkTop = styled.a`
   text-decoration: none;
@@ -64,17 +65,17 @@ const NavLinkTop = styled.a`
   :focus {
     opacity: 0.7;
   }
-`
+`;
 
 const Headerbottom = styled.div`
-  background: var(--clr-dark);
+  background: #c3facc;
   padding: 1em 0;
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-`
+`;
 
 const LogoContainer = styled.div`
   img {
@@ -85,7 +86,7 @@ const LogoContainer = styled.div`
       height: 90px;
     }
   }
-`
+`;
 
 const Nav = styled.nav`
   z-index: 1000;
@@ -95,12 +96,11 @@ const Nav = styled.nav`
 
   ul {
     li {
-        a {
-        
-        }
+      a {
+      }
     }
   }
-`
+`;
 
 const NavList = styled.ul`
   display: flex;
@@ -111,13 +111,18 @@ const NavList = styled.ul`
 
   & > * + * {
     margin-left: 1.5em;
+
+    @media screen and (max-width) {
+      margin-left: 0;
+      margin-top: 1.5em;
+    }
   }
 
   @media screen and (max-width: ${device.md}) {
     display: ${({ nav }) => (nav ? "flex" : "none")};
     align-items: center;
     position: absolute;
-    top: 150px;
+    top: 130px;
     left: 0;
     right: 0;
     flex-direction: column;
@@ -137,9 +142,9 @@ const NavList = styled.ul`
     //   margin-top: 15px;
     // }
   }
-`
+`;
 
-const GetQuote = styled(props => <Link {...props} />)`
+const GetQuote = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-size: var(--fs-sm);
@@ -160,7 +165,7 @@ const GetQuote = styled(props => <Link {...props} />)`
     background: var(--clr-accent-darker);
     color: var(--txt-light);
   }
-`
+`;
 
 const Dropdown = styled.li`
   /* hover display only on desktop */
@@ -182,34 +187,30 @@ const Dropdown = styled.li`
       list-style-type: none;
       background: var(--clr-light);
 
-    
-
       li {
-        
-            text-decoration: none;
-  text-transform: uppercase;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-700);
-  color: var(--txt-light);
-  letter-spacing: 0.1em;
-  transition: all 0.25s linear;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: var(--fs-sm);
+        font-weight: var(--fw-700);
+        color: var(--txt-light);
+        letter-spacing: 0.1em;
+        transition: all 0.25s linear;
 
-  // aligning text with icon
-  display: flex;
-  align-items: center;
-  gap: 2px;
+        // aligning text with icon
+        display: flex;
+        align-items: center;
+        gap: 2px;
 
-  :hover,
-  :focus {
-    opacity: 0.7;
-    color: var(--clr-tan);
-  }
+        :hover,
+        :focus {
+          opacity: 0.7;
+          color: var(--clr-tan);
+        }
 
-  @media screen and (max-width: ${device.md}) {
-    font-size: var(--fs-b);
-    color: var(--txt-dark);
-  }
-        
+        @media screen and (max-width: ${device.md}) {
+          font-size: var(--fs-b);
+          color: var(--txt-dark);
+        }
       }
     }
 
@@ -219,10 +220,10 @@ const Dropdown = styled.li`
       }
     }
   }
-`
+`;
 
 const Title = styled.li`
-    text-decoration: none;
+  text-decoration: none;
   text-transform: uppercase;
   font-size: var(--fs-sm);
   font-weight: var(--fw-700);
@@ -247,31 +248,31 @@ const Title = styled.li`
   }
 
   a {
-        text-decoration: none;
-  text-transform: uppercase;
-  font-size: var(--fs-sm);
-  font-weight: var(--fw-700);
-  color: var(--txt-light);
-  letter-spacing: 0.1em;
-  transition: all 0.25s linear;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-700);
+    color: var(--txt-light);
+    letter-spacing: 0.1em;
+    transition: all 0.25s linear;
 
-  // aligning text with icon
-  display: flex;
-  align-items: center;
-  gap: 2px;
+    // aligning text with icon
+    display: flex;
+    align-items: center;
+    gap: 2px;
 
-  :hover,
-  :focus {
-    opacity: 0.7;
-    color: var(--clr-tan);
-  }
+    :hover,
+    :focus {
+      opacity: 0.7;
+      color: var(--clr-tan);
+    }
 
-  @media screen and (max-width: ${device.md}) {
-    font-size: var(--fs-b);
-    color: var(--txt-dark);
+    @media screen and (max-width: ${device.md}) {
+      font-size: var(--fs-b);
+      color: var(--txt-dark);
+    }
   }
-  }
-`
+`;
 
 const DropdownAbout = styled.li`
   /* hover display only on desktop */
@@ -300,13 +301,14 @@ const DropdownAbout = styled.li`
       }
     }
   }
-`
+`;
 const DropdownResources = styled.li`
   /* hover display only on desktop */
 
   @media screen and (min-width: ${device.md}) {
     div {
-      display: ${({ dropdownResources }) => (dropdownResources ? "flex" : "none")};
+      display: ${({ dropdownResources }) =>
+        dropdownResources ? "flex" : "none"};
       position: absolute;
       top: 155px;
       left: 0;
@@ -328,7 +330,7 @@ const DropdownResources = styled.li`
       }
     }
   }
-`
+`;
 const DropdownServices = styled.li`
   /* hover display only on desktop */
 
@@ -357,14 +359,14 @@ const DropdownServices = styled.li`
       }
     }
   }
-`
+`;
 
-const StyledLink = styled(props => <Link {...props} />)`
+const StyledLink = styled((props) => <Link {...props} />)`
   text-decoration: none;
   text-transform: uppercase;
   font-size: var(--fs-sm);
   font-weight: var(--fw-700);
-  color: var(--txt-light);
+  color: var(--txt-dark);
   letter-spacing: 0.1em;
   transition: all 0.25s linear;
 
@@ -376,14 +378,14 @@ const StyledLink = styled(props => <Link {...props} />)`
   :hover,
   :focus {
     opacity: 0.7;
-    color: var(--clr-tan);
+    color: var(--clr-accent);
   }
 
   @media screen and (max-width: ${device.md}) {
     font-size: var(--fs-b);
     color: var(--txt-dark);
   }
-`
+`;
 
 const Burger = styled.div`
   display: none;
@@ -413,367 +415,83 @@ const Burger = styled.div`
     display: block;
     z-index: 10000;
   }
-`
+`;
 
 export default function HeaderTest() {
-      const [nav, navOpen] = useState(false)
-  const [dropdownAbout, dropdownOpenAbout] = useState(false)
-  const [dropdownResources, dropdownOpenResources] = useState(false)
-  const [dropdownServices, dropdownOpenServices] = useState(false)
-  const [scrolled, setScrolled] = useState(true)
+  const [nav, navOpen] = useState(false);
+  const [dropdownAbout, dropdownOpenAbout] = useState(false);
+  const [dropdownResources, dropdownOpenResources] = useState(false);
+  const [dropdownServices, dropdownOpenServices] = useState(false);
+  const [scrolled, setScrolled] = useState(true);
 
   function toggleMenu() {
-    navOpen(!nav)
+    navOpen(!nav);
   }
 
   function toggleDropdownAbout() {
-    dropdownOpenAbout(!dropdownAbout)
+    dropdownOpenAbout(!dropdownAbout);
   }
   function toggleDropdownResources() {
-    dropdownOpenResources(!dropdownResources)
+    dropdownOpenResources(!dropdownResources);
   }
   function toggleDropdownServices() {
-    dropdownOpenServices(!dropdownServices)
+    dropdownOpenServices(!dropdownServices);
   }
   return (
     <div>
-        <Header>
+      <Header>
         <Headertop>
-        <Container>
-            <ul>
-              <li>
-                <NavLinkTop href="tel: 403-257-4059">
-                  <div>
-                    <FaPhone />
-                  </div>
-                  403-257-4059
-                </NavLinkTop>
-              </li>
-              <li>
-                <NavLinkTop href="mailto: office@projectlandscape.ca">
-                  <div>
-                    <MdOutlineEmail />
-                  </div>
-                  office@projectlandscape.ca
-                </NavLinkTop>
-              </li>
-              <li>
-                <NavLinkTop
-                  href="https://www.google.com/search?q=project%20landscape&oq=project+landscape&aqs=chrome..69i57j69i64j69i60l3.2120j0j7&sourceid=chrome&ie=UTF-8&tbs=lf:1,lf_ui:14&tbm=lcl&sxsrf=AJOqlzVRUU_ZaNptPsOjzHtILa57paj9uQ:1676341266052&rflfq=1&num=10&rldimm=11747008283103314784&lqi=ChFwcm9qZWN0IGxhbmRzY2FwZUi-z42FnKuAgAhaGxAAEAEYABgBIhFwcm9qZWN0IGxhbmRzY2FwZXoHQ2FsZ2FyeZIBEmxhbmRzY2FwZV9kZXNpZ25lcg&ved=2ahUKEwjnu73t-ZP9AhVKGzQIHdw6BLIQvS56BAgWEAE&sa=X&rlst=f#rlfi=hd:;si:11747008283103314784,l,ChFwcm9qZWN0IGxhbmRzY2FwZUi-z42FnKuAgAhaGxAAEAEYABgBIhFwcm9qZWN0IGxhbmRzY2FwZXoHQ2FsZ2FyeZIBEmxhbmRzY2FwZV9kZXNpZ25lcg;mv:[[50.997355899999995,-113.98204679999999],[50.9522124,-114.01662379999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:14"
-                  target="_blank"
-                >
-                  <div>
-                    <MdLocationOn />
-                  </div>
-                  3511 64 Ave Calgary
-                </NavLinkTop>
-              </li>
-            </ul>
+          <Container>
+            <center>
+              <p className="italics">
+                Dive into our membership levels designed to meet you at every
+                stage of your gaming journey!{" "}
+                <ButtonInline className="bold underline" href="/">
+                  Learn More &#8594;
+                </ButtonInline>
+              </p>
+            </center>
           </Container>
-          </Headertop>
+        </Headertop>
 
-          <Headerbottom>
-            <Container className="container">
-          <LogoContainer>
+        <Headerbottom>
+          <Container className="container">
+            <LogoContainer>
               <Link href="/">
-                <Image src="/project-landscape-logo-light.svg" alt="landscape company calgary logo" height={70} width={100} />
+                <h3 className="subheader">gameflo</h3>
               </Link>
             </LogoContainer>
             <Nav>
-                <Burger nav={nav} onClick={toggleMenu}>
+              <Burger nav={nav} onClick={toggleMenu}>
                 <div />
                 <div />
                 <div />
               </Burger>
               <NavList nav={nav}>
-                <Dropdown>
-                    {/* <Title >
-                        <p>residential services</p>
-                        
-                            <IoMdArrowDropdown size={20} />
-                    </Title> */}
-                  <div>
-                    <ul>
-                        <Link href="/residential-services/hardscaping">
-                            <h3 className="subheader">hardscaping</h3>
-                          
-                        </Link>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/patio-surfaces">
-                          paving stones
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/retaining-walls">
-                          retaining walls
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/outdoor-living/garden-walls">
-                          garden walls
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/hardscaping/garden-bed-edging">
-                          garden bed edging
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/concrete-curbing">
-                          concrete curbing
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/staircases-stepping-stones">
-                          stairs and stepping stones
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/seating">
-                          seat walls and pillars
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/concrete-installations">
-                          concrete installation
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/hardscaping/water-management">
-                          water management
-                        </StyledLink>
-                      </li>
-                    </ul>
-
-                    <ul>
-                        <Link className="subheader" href="/residential-services/softscaping">
-                          <h3 className="subheader">softscaping</h3>
-                        </Link>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/artificial-turf">
-                          artificial turf
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/irrigation-landscape-lighting">
-                          irrigation installation
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/sod-installation">
-                          sod installation
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/tree-shrub-planting">
-                          shrub and tree planting
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/mulches-decorative-rock">
-                          mulch and decorative rock
-                        </StyledLink>
-                      </li>
-                    </ul>
-
-                    <ul>
-                        <Link className="subheader" href="/residential-services/outdoor-living">
-                          <h3 className="subheader">outdoor living</h3>
-                        </Link>
-                      <li>
-                        <StyledLink href="/decks-calgary">
-                          decks
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/gazebos-pergolas">
-                          pergolas
-                        </StyledLink>
-                      </li>
-                       <li>
-                        <StyledLink href="/landscape-lighting-services-calgary">
-                          landscape lighting
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/landscape-design">
-                          landscape design
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/water-features">
-                          water features
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/fire-pits-fire-places">
-                          fire pits and fire places
-                        </StyledLink>
-                      </li>
-
-                      <li>
-                        <StyledLink href="/fence-contractor-in-calgary">
-                          fences
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/privacy-screens">
-                          privacy screens
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/railings">
-                          deck railings
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/landscape-construction/outdoor-kitchens">
-                          outdoor kitchens
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/residential-services/outdoor-living/outdoor-furniture">
-                          outdoor furniture
-                        </StyledLink>
-                      </li> 
-                    </ul>
-                  </div>
-                </Dropdown>
-                  <Dropdown
-                >
-                   {/* <Title >
-                        <p>about</p>
-                        
-                            <IoMdArrowDropdown size={20} />
-                    </Title> */}
-                  <div>
-                   <ul>
-                        <Link className="subheader accent" href="/about"><h3 className="subheader">company information</h3></Link>
-                      <li>
-                        <StyledLink href="/about">about</StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/our-process">our process</StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/careers">careers</StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/project-landscape-difference">
-                          the project landscape difference
-                        </StyledLink>
-                      </li>
-                      
-                    </ul>
-                    <ul>
-                      <h3 className="subheader">
-                        customer center
-                      </h3>
-                      <li>
-                        <StyledLink href="/faq">
-                          FAQ
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/refer-a-friend-to-project-landscape-ltd">
-                          refer a friend
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/strategic-partners">
-                          strategic partners
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/areas-we-service">
-                          service areas
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/financing">financing </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/warranty-request">
-                          warranty request
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/blog">
-                          blogs
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/testimonials">
-                          testimonials
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/packages">packages</StyledLink>
-                      </li>
-                    </ul>
-                  </div>
-                </Dropdown>  
-                <Dropdown
-                >
-                     {/* <Title >
-                        <p>resources</p>
-                        
-                            <IoMdArrowDropdown size={20} />
-                    </Title> */}
-                  <div>
-                    <ul>
-                      <h3 className="subheader">
-                        Get Inspired
-                      </h3>
-                      <li>
-                        <StyledLink href="/portfolio">portfolio</StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/landscape-idea-center">
-                          indoor idea center
-                        </StyledLink>
-                      </li>
-                      
-                    </ul>
-                    <ul>
-                      <h3 className="subheader">
-                        designscape style
-                      </h3>
-                      <li>
-                        <StyledLink href="/landscape-styles">
-                          landscaping styles
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/outdoor-living-inspiration">
-                         outdoor living inspiration
-                        </StyledLink>
-                      </li>
-                      <li>
-                        <StyledLink href="/landscaping-trends">
-                         landscaping trends
-                        </StyledLink>
-                      </li>
-                    </ul>
-                  </div>
-                </Dropdown>
-
                 <li>
-                    {/* <Title >
-                        <StyledLink href="/commercial-services">commercial services</StyledLink>
-                    </Title> */}
+                  <StyledLink href="/">how it works</StyledLink>
                 </li>
                 <li>
-                    {/* <Title >
-                        <StyledLink href="/contact">contact</StyledLink>
-                    </Title> */}
-                  
+                  <StyledLink href="/">getting started</StyledLink>
                 </li>
+                <li>
+                  <StyledLink href="/">memberships</StyledLink>
+                </li>
+                <li>
+                  <StyledLink href="/">testimonials</StyledLink>
+                </li>
+                <li>
+                  <StyledLink href="/">about</StyledLink>
+                </li>
+                <li>
+                  <StyledLink href="/">contact</StyledLink>
+                </li>
+                <GetQuote href="/">book demo &#8594;</GetQuote>
               </NavList>
             </Nav>
-            </Container>
-            </Headerbottom>
-        </Header>
+          </Container>
+        </Headerbottom>
+      </Header>
     </div>
-  )
+  );
 }

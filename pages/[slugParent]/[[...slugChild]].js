@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 
 import PageComponents from "lib/pageComponents";
 import { getPageByUri, getAllPages, getBreadcrumbsByUri } from "lib/pages";
+import LayoutJs from "../../components/layoutJs";
 
 export default function Page({ page }) {
   const {
@@ -20,7 +21,7 @@ export default function Page({ page }) {
     Array.isArray(acf.flexibleFields) && acf.flexibleFields.length > 0;
 
   return (
-    <div>
+    <LayoutJs>
       {/* Iterate over ACF flexible fields and pass props to imported component */}
       {hasFlexibleFields && (
         <div>
@@ -38,7 +39,7 @@ export default function Page({ page }) {
           __html: content,
         }}
       />
-    </div>
+    </LayoutJs>
   );
 }
 

@@ -1,7 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import { Section, Container } from "components/layoutComponents"
-import { ButtonPrimary } from "components/buttons"
+import React from "react";
+import styled from "styled-components";
+import { Section, Container, Actions } from "components/layoutComponents";
+import { ButtonPrimary } from "components/buttons";
+import { ButtonSecondary } from "../../buttons";
 
 const Text = styled.div`
   text-align: center;
@@ -11,7 +12,7 @@ const Text = styled.div`
   margin-left: auto;
 
   p {
-    text-align: left;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     max-width: 90ch;
@@ -24,7 +25,7 @@ const Text = styled.div`
       }
     }
   }
-`
+`;
 
 // const StyledImg = styled(GatsbyImage)`
 //   width: 80%;
@@ -32,14 +33,14 @@ const Text = styled.div`
 // `
 
 export default function ComponentC({ subheader, title, body, image }) {
-    let width = '100%';
-  let height = 'auto';
+  let width = "100%";
+  let height = "auto";
   return (
     <Section>
       <Container className="spacing center ">
         <Text className="spacing">
           <div className="">
-            <p className="subheader accent">{subheader}</p>
+            <p className="subheader accent center">{subheader}</p>
             <h2 className="title">{title}</h2>
           </div>
           <div
@@ -49,16 +50,24 @@ export default function ComponentC({ subheader, title, body, image }) {
           />
         </Text>
         {image ? (
-         <img width={width} height={height} src={image.sourceUrl} alt={image.altText || ''} srcSet={image.srcSet} />
-       ) : null}
+          <img
+            width={width}
+            height={height}
+            src={image.sourceUrl}
+            alt={image.altText || ""}
+            srcSet={image.srcSet}
+          />
+        ) : null}
         <center>
-          <ButtonPrimary href="/contact">talk to us today</ButtonPrimary>
+          <Actions>
+            <ButtonSecondary href="/contact">order now</ButtonSecondary>
+            <ButtonPrimary href="/contact">contact us</ButtonPrimary>
+          </Actions>
         </center>
       </Container>
     </Section>
-  )
+  );
 }
-
 
 // const ComponentC = ({ subheader, title, body, image }) => {
 //   let width = '100%';

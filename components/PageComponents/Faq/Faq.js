@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   Accordion,
   AccordionItem,
@@ -6,10 +6,10 @@ import {
   AccordionPanel,
   AccordionIcon,
   Box,
-} from "@chakra-ui/react"
-import { Container, FlexMobileOpp, Section } from "components/layoutComponents"
-import styled from "styled-components"
-import { ButtonPrimary, ButtonSecondaryLight } from "components/buttons"
+} from "@chakra-ui/react";
+import { Container, FlexMobileOpp, Section } from "components/layoutComponents";
+import styled from "styled-components";
+import { ButtonPrimary, ButtonSecondaryLight } from "components/buttons";
 
 const Wrapper = styled.div`
   background: url("http://21-pl.purpleparrotwebsites.com/wp-content/uploads/2023/05/hero.webp"),
@@ -19,24 +19,25 @@ const Wrapper = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--txt-light);
-`
+`;
 
-const AccordionStyle = {
-  background: "var(--clr-accent)",
-  borderRadius: "var(--br)",
-  border: "none",
-}
+const AccordionStyle = styled.div`
+  background: var(--clr-accent);
+  border-radius: var(--br);
+  border: none;
+`;
 
 export default function FaqFeatured({ title, body, questions }) {
   return (
     <Wrapper>
       <Section>
-        <Container>
+        <Container className="spacing">
           <h2 className="title">{title}</h2>
-            <Accordion className="spacing">
-              {questions.map(item => {
-                return (
-                  <AccordionItem style={AccordionStyle}>
+          <Accordion className="spacing">
+            {questions.map((item) => {
+              return (
+                <AccordionStyle>
+                  <AccordionItem>
                     <h2>
                       <AccordionButton>
                         <Box
@@ -57,12 +58,13 @@ export default function FaqFeatured({ title, body, questions }) {
                       }}
                     />
                   </AccordionItem>
-                )
-              })}
-            </Accordion>
-            <ButtonPrimary href="/contact">book a service</ButtonPrimary>
+                </AccordionStyle>
+              );
+            })}
+          </Accordion>
+          <ButtonPrimary href="/contact">book a service</ButtonPrimary>
         </Container>
       </Section>
     </Wrapper>
-  )
+  );
 }

@@ -1,35 +1,46 @@
-import React from "react"
-import styled from "styled-components"
-import { Container, Section, FlexMobileOpp } from "components/layoutComponents"
-import { ButtonSecondaryLight } from "components/buttons"
-import Image from "components/Image"
+import React from "react";
+import styled from "styled-components";
+import { Container, Section, FlexMobileOpp } from "components/layoutComponents";
+import { ButtonSecondaryLight } from "components/buttons";
+import Image from "components/Image";
 
 const Wrapper = styled.div`
-  background: var(--clr-accent);
-`
+  background: #1a1a1a;
+`;
 
 const Text = styled.div`
   color: var(--txt-light);
   p {
     color: var(--txt-light);
   }
-`
+`;
 
 // const StyledImg = styled(GatsbyImage)`
 //   box-shadow: -20px 20px 0px 1px var(--clr-tan);
 // `
 
-const ImgStyle = {
-  boxShadow: "-20px 20px 0px 1px var(--clr-accent)",
-}
+export default function ImageLeftDark({
+  subheader,
+  title,
+  body,
+  image,
+  button,
+  link,
+}) {
+  let width = "100%";
+  let height = "600px";
 
-export default function ImageLeftDark({ subheader, title, body, image, button, link }) {
   return (
     <Wrapper>
       <Section>
         <Container>
           <FlexMobileOpp>
-            <Image style={ImgStyle} className="stretch" alt={image.altText || ''}  srcSet={image.srcSet}  />
+            <Image
+              alt={image.altText || ""}
+              srcSet={image.srcSet}
+              width={width}
+              height={height}
+            />
             <Text className="spacing">
               <div>
                 <p className="subheader accent">{subheader} </p>
@@ -40,11 +51,19 @@ export default function ImageLeftDark({ subheader, title, body, image, button, l
                   __html: `${body}`,
                 }}
               />
-              {button && link ? (<ButtonSecondaryLight href={link}>{button}</ButtonSecondaryLight>) : <ButtonSecondaryLight href="/contact">get started</ButtonSecondaryLight>}
+              {button && link ? (
+                <ButtonSecondaryLight href={link}>
+                  {button}
+                </ButtonSecondaryLight>
+              ) : (
+                <ButtonSecondaryLight href="/contact">
+                  get started
+                </ButtonSecondaryLight>
+              )}
             </Text>
           </FlexMobileOpp>
         </Container>
       </Section>
     </Wrapper>
-  )
+  );
 }

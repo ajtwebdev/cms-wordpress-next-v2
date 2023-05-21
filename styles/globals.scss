@@ -34,10 +34,10 @@
   --clr-dark: #232525;
   --clr-light: #fff;
   --clr-light-secondary: #f0f0f0;
-  --clr-accent: #2a7c1a;
-  --clr-accent-lighter: #41b12b;
-  --clr-accent-darker: #209c07;
-  --clr-tan: #e9be83;
+  --clr-accent: #3fd9ff;
+  --clr-accent-lighter: #59dcfd;
+  --clr-accent-darker: #2acff8;
+  --clr-tan: #5845b1;
   --clr-overlay: rgba(0, 0, 0, 0.6);
   --clr-overlay-darker: rgba(0, 0, 0, 0.8);
 
@@ -162,6 +162,10 @@ hr {
   font-style: italic;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .upper {
   text-transform: uppercase;
   line-height: 1.1;
@@ -234,7 +238,15 @@ hr {
 
 /* clip paths */
 .clip-arrow-right {
-  clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+  clip-path: polygon(
+    0% 20%,
+    60% 20%,
+    60% 0%,
+    100% 50%,
+    60% 100%,
+    60% 80%,
+    0% 80%
+  );
 }
 
 .clip-right-chev {

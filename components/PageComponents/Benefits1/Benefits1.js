@@ -16,8 +16,8 @@ const BenefitItem = styled.div`
 `;
 
 export default function Benefits1({ subheader, title, benefitContent }) {
-  let width = "100px";
-  let height = "100px";
+  let width = "100%";
+  let height = "400px";
   return (
     <Section>
       <Container className="spacing-md">
@@ -48,9 +48,6 @@ export default function Benefits1({ subheader, title, benefitContent }) {
             );
           })}
         </GridThree>
-        <center>
-          <ButtonPrimary href="/contact">get quote</ButtonPrimary>
-        </center>
       </Container>
     </Section>
   );

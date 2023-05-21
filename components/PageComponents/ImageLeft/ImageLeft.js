@@ -22,15 +22,18 @@ export default function ImageLeft({
   button,
   link,
 }) {
+  let width = "100%";
+  let height = "600px";
+
   return (
     <Section>
       <Container>
         <FlexMobileOpp>
           <Image
-            style={ImgStyle}
-            className="stretch"
             alt={image.altText || ""}
             srcSet={image.srcSet}
+            width={width}
+            height={height}
           />
           <Text className="spacing">
             <div>
