@@ -24,7 +24,7 @@ const ReviewWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: url("http://21-pl.purpleparrotwebsites.com/wp-content/uploads/2023/05/calgary-landscaping-testimonials-banner.jpg");
+  background: url("http://www.gameflo-wp.purpleparrotwebsites.com/wp-content/uploads/woocommerce-placeholder.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ const FlexStars = styled.div`
   }
 
   & > * {
-    color: var(--clr-tan);
+    color: var(--clr-accent);
   }
 `;
 

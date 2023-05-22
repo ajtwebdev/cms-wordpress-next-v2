@@ -13,11 +13,18 @@ const Text = styled.div`
   p {
     color: var(--txt-light);
   }
+  h2 {
+    color: var(--txt-light);
+  }
 `;
 
 // const StyledImg = styled(GatsbyImage)`
 //   box-shadow: -20px 20px 0px 1px var(--clr-tan);
 // `
+
+const Img = styled.div`
+  // box-shadow: -20px 20px 0px 1px var(--clr-tan);
+`;
 
 export default function ImageLeftDark({
   subheader,
@@ -35,12 +42,14 @@ export default function ImageLeftDark({
       <Section>
         <Container>
           <FlexMobileOpp>
-            <Image
-              alt={image.altText || ""}
-              srcSet={image.srcSet}
-              width={width}
-              height={height}
-            />
+            <Img>
+              <Image
+                alt={image.altText || ""}
+                srcSet={image.srcSet}
+                width={width}
+                height={height}
+              />
+            </Img>
             <Text className="spacing">
               <div>
                 <p className="subheader accent">{subheader} </p>

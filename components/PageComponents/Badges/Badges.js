@@ -37,7 +37,7 @@ export default function Badges({ title }) {
           <Image
             src="/brag-bar.png"
             alt="video game logos"
-            width={800}
+            width={600}
             height={400}
           />
         </center>

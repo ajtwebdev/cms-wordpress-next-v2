@@ -88,6 +88,30 @@ const LogoContainer = styled.div`
   }
 `;
 
+const LinkLogo = styled((props) => <Link {...props} />)`
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: var(--fs-3);
+  font-weight: var(--fw-700);
+  color: var(--txt-dark);
+  letter-spacing: 0.1em;
+  transition: all 0.25s linear;
+
+  // aligning text with icon
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  :hover,
+  :focus {
+  }
+
+  @media screen and (max-width: ${device.md}) {
+    font-size: var(--fs-b);
+    color: var(--txt-dark);
+  }
+`;
+
 const Nav = styled.nav`
   z-index: 1000;
   display: flex;
@@ -457,9 +481,7 @@ export default function HeaderTest() {
         <Headerbottom>
           <Container className="container">
             <LogoContainer>
-              <Link href="/">
-                <h3 className="subheader">gameflo</h3>
-              </Link>
+              <LinkLogo href="/">gameflo</LinkLogo>
             </LogoContainer>
             <Nav>
               <Burger nav={nav} onClick={toggleMenu}>

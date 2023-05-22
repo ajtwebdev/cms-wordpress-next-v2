@@ -10,9 +10,19 @@ import Image from "../../Image";
 // `
 
 const BenefitItem = styled.div`
-  border: 2px solid var(--clr-tan);
+  border: 2px solid #90ee80;
   padding: 2em;
   border-radius: var(--br);
+
+  h3 {
+    color: var(--txt-dark);
+  }
+
+  div {
+    p {
+      color: var(--txt-body);
+    }
+  }
 `;
 
 export default function Benefits1({ subheader, title, benefitContent }) {
@@ -36,7 +46,7 @@ export default function Benefits1({ subheader, title, benefitContent }) {
                   width={width}
                   height={height}
                 />
-                <h3 className="subheader caps tan">{benefit.title}</h3>
+                <h3 className="subheader">{benefit.title}</h3>
                 {benefit.description ? (
                   <div
                     dangerouslySetInnerHTML={{

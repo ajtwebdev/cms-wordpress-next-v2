@@ -41,7 +41,7 @@ const Flex = styled.div`
 const Wrapper = styled.footer``;
 
 const FooterWrapperTop = styled.div`
-  padding: 4em 0 3rem 0;
+  padding: 4em 0 4em 0;
   background: var(--clr-dark);
 
   h4 {
@@ -58,8 +58,8 @@ const FooterWrapperTop = styled.div`
 `;
 
 const FooterWrapperBottom = styled.div`
-  padding: 4em 0 1em 0;
-  background: var(--clr-accent);
+  padding: 4em 0 4em 0;
+  background: #1a1a1a;
 
   h4 {
     color: var(--clr-tan);
@@ -232,13 +232,13 @@ export default function Footer() {
               </li>
             </ul>
           </Copyright>
-          <Author>
+          {/* <Author>
             <Container>
               <div>
                 <p>website by: </p>
               </div>
             </Container>
-          </Author>
+          </Author> */}
         </Container>
       </FooterWrapperBottom>
     </Wrapper>

@@ -49,8 +49,7 @@ const Content = styled.div`
 `;
 
 const Content1 = styled.div`
-  background: url("http://21-pl.purpleparrotwebsites.com/wp-content/uploads/2023/05/under-deck-lighting-calgary.png"),
-    rgba(0, 0, 0, 0.4);
+  background: url("https://unsplash.com/photos/Im7lZjxeLhg"), rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
   background-position: center;
   height: 85vh;
@@ -58,8 +57,7 @@ const Content1 = styled.div`
   background-repeat: no-repeat;
 `;
 const Content2 = styled.div`
-  background: url("http://21-pl.purpleparrotwebsites.com/wp-content/uploads/2023/05/deck-banner-3.webp"),
-    rgba(0, 0, 0, 0.4);
+  background: url("https://unsplash.com/photos/Im7lZjxeLhg"), rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
   background-position: center;
   height: 85vh;
@@ -67,8 +65,7 @@ const Content2 = styled.div`
   background-repeat: no-repeat;
 `;
 const Content3 = styled.div`
-  background: url("http://21-pl.purpleparrotwebsites.com/wp-content/uploads/2023/05/deck-banner-1.webp"),
-    rgba(0, 0, 0, 0.4);
+  background: url("https://unsplash.com/photos/Im7lZjxeLhg"), rgba(0, 0, 0, 0.4);
   background-blend-mode: overlay;
   background-position: center;
   height: 85vh;
@@ -101,7 +98,7 @@ export default function HeroSlider({ title }) {
                   <h1 className="title">
                     Take Your Gameplay to the Next Level with Neuroscience.
                   </h1>
-                  <p className="subheader tan">
+                  <p className="">
                     By using neuroscience to get in-game feedback, you can
                     unleash your cognitive potential and take your gameplay to
                     the next level.
@@ -124,7 +121,7 @@ export default function HeroSlider({ title }) {
                   <h2 className="title">
                     Neurofeedback is a Game-Changer. Literally.
                   </h2>
-                  <p className="subheader tan">
+                  <p className="">
                     By monitoring your brain activity during gameplay and
                     actively working to change it, you can systematically take
                     your skills to the next level.
@@ -147,7 +144,7 @@ export default function HeroSlider({ title }) {
                   <h2 className="title">
                     Optimize Your Mental State for Peak Gaming Performance
                   </h2>
-                  <p className="subheader tan">
+                  <p className="">
                     Our headband is designed to read your brain’s electrical
                     activity, offering you in-game feedback to give you a
                     competitive edge.

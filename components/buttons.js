@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-export const ButtonPrimary = styled(props => <Link {...props} />)`
+export const ButtonPrimary = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-family: var(--ff-alfa);
@@ -35,9 +35,9 @@ export const ButtonPrimary = styled(props => <Link {...props} />)`
       padding-left: 0;
     }
   }
-`
+`;
 
-export const ButtonPrimaryDark = styled(props => <Link {...props} />)`
+export const ButtonPrimaryDark = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-family: var(--ff-alfa);
@@ -57,9 +57,9 @@ export const ButtonPrimaryDark = styled(props => <Link {...props} />)`
     background: #000;
     color: var(--txt-light);
   }
-`
+`;
 
-export const ButtonSecondary = styled(props => <Link {...props} />)`
+export const ButtonSecondary = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-family: var(--ff-alfa);
@@ -79,8 +79,8 @@ export const ButtonSecondary = styled(props => <Link {...props} />)`
     opacity: 0.8;
     color: var(--clr-accent);
   }
-`
-export const ButtonSecondaryLight = styled(props => <Link {...props} />)`
+`;
+export const ButtonSecondaryLight = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-family: var(--ff-alfa);
@@ -91,15 +91,14 @@ export const ButtonSecondaryLight = styled(props => <Link {...props} />)`
   padding: 1em 1.33em;
   transition: all 0.2s linear;
   text-transform: uppercase;
-  background: var(--clr-tan);
-  color: var(--txt-dark);
-  border: 1px solid var(--clr-tan);
+  color: var(--clr-accent);
+  border: 1px solid var(--clr-accent);
 
   &:hover {
-    color: var(--txt-dark);
+    color: var(--clr-accent);
   }
-`
-export const ButtonSecondaryDark = styled(props => <Link {...props} />)`
+`;
+export const ButtonSecondaryDark = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-family: var(--ff-alfa);
@@ -119,9 +118,9 @@ export const ButtonSecondaryDark = styled(props => <Link {...props} />)`
     opacity: 0.8;
     color: var(--clr-dark);
   }
-`
+`;
 
-export const ButtonUnderline = styled(props => <Link {...props} />)`
+export const ButtonUnderline = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   font-family: var(--ff-alfa);
@@ -145,16 +144,16 @@ export const ButtonUnderline = styled(props => <Link {...props} />)`
   &:hover {
     color: var(--clr-accent);
   }
-`
-export const ButtonInline = styled(props => <Link {...props} />)`
+`;
+export const ButtonInline = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
-  color: var(--clr-accent);
+  color: var(--txt-dark);
   text-decoration: none;
   &:hover {
-    color: var(--clr-accent);
+    color: var(--txt-dark);
   }
-`
+`;
 
 // Anchors
 export const AnchorPrimary = styled.a`
@@ -188,7 +187,7 @@ export const AnchorPrimary = styled.a`
     background: var(--clr-accent-darker);
     color: var(--txt-light);
   }
-`
+`;
 
 export const AnchorSecondary = styled.a`
   cursor: pointer;
@@ -208,7 +207,7 @@ export const AnchorSecondary = styled.a`
   &:hover {
     opacity: 0.8;
   }
-`
+`;
 export const AnchorSecondaryDark = styled.a`
   cursor: pointer;
   display: inline-block;
@@ -227,7 +226,7 @@ export const AnchorSecondaryDark = styled.a`
   &:hover {
     opacity: 0.8;
   }
-`
+`;
 
 export const AnchorUnderline = styled.a`
   cursor: pointer;
@@ -252,7 +251,7 @@ export const AnchorUnderline = styled.a`
   &:hover {
     color: var(--clr-accent);
   }
-`
+`;
 
 export const AnchorInline = styled.a`
   cursor: pointer;
@@ -271,4 +270,4 @@ export const AnchorInline = styled.a`
   &:hover {
     color: var(--clr-accent);
   }
-`
+`;

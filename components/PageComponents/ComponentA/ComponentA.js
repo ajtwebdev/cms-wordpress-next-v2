@@ -1,22 +1,22 @@
-import React from "react"
-import styled from "styled-components"
-import { Container, Section } from "components/layoutComponents"
-import Image from "components/Image"
+import React from "react";
+import styled from "styled-components";
+import { Container, Section } from "components/layoutComponents";
+import Image from "components/Image";
 
 const device = {
   md: "48em",
-}
+};
 
 const Text = styled.div`
   max-width: 90ch;
   width: 100%;
-`
+`;
 
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 140px auto 2em;
   grid-template-rows: 2em auto 2em;
-`
+`;
 
 const List = styled.div`
   width: 85%;
@@ -39,37 +39,39 @@ const List = styled.div`
       padding-left: 2em;
     }
   }
-`
+`;
 
 const Bg = styled.div`
   grid-row: 2 / -1;
   grid-column: 2 / -1;
   z-index: 1;
-  background: var(--clr-accent);
-`
+  background: #90ee80;
+`;
 
 const Item = styled.div`
-  background: var(--clr-dark);
+  background: #1a1a1a;
   color: var(--txt-light);
   text-decoration: none;
 
   div {
-    
   }
-`
+`;
 
 const Inner = styled.div`
-padding: 1em;
-    p {
-      color: var(--txt-light);
-    }
-    ul {
-      margin-top: 4px;
-      margin-bottom: 4px;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-`
+  padding: 1em;
+  h3 {
+    color: var(--txt-light);
+  }
+  p {
+    color: var(--txt-light);
+  }
+  ul {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+`;
 
 // const StyledImg = styled(GatsbyImage)`
 //   width: 100%;
@@ -88,11 +90,11 @@ const Button = styled.div`
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--clr-accent);
-`
+`;
 
 export default function ComponentA({ subheader, title, body, componentItems }) {
-  let width = '100%';
-let height = '400px';
+  let width = "100%";
+  let height = "400px";
   return (
     <Section>
       <div className="spacing">
@@ -113,12 +115,18 @@ let height = '400px';
         </Container>
         <Grid>
           <List>
-            {componentItems.map(item => {
+            {componentItems.map((item) => {
               return (
                 <Item>
-                  <Image alt={item.image.altText || ''} srcSet={item.image.srcSet} src={item.image.src} width={width} height={height} />
+                  <Image
+                    alt={item.image.altText || ""}
+                    srcSet={item.image.srcSet}
+                    src={item.image.src}
+                    width={width}
+                    height={height}
+                  />
                   <Inner>
-                    <h3 className="subheader tan">{item.title}</h3>
+                    <h3 className="subheader">{item.title}</h3>
                     {item.text ? (
                       <div
                         dangerouslySetInnerHTML={{
@@ -135,16 +143,15 @@ let height = '400px';
                     ) : null}
                   </Inner>
                 </Item>
-              )
+              );
             })}
           </List>
           <Bg />
         </Grid>
       </div>
     </Section>
-  )
+  );
 }
-
 
 // const ComponentA = ({ subheader, title, body, componentItems }) => {
 //   return (
