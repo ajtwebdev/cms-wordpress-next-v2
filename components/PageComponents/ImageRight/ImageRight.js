@@ -35,7 +35,7 @@ export default function ImageRight({
     <Section id="how-it-works">
       <Container>
         <Flex>
-          <Text className="spacing">
+          <Text className="spacing ">
             <div>
               <p className="subheader accent">{subheader}</p>
               <h2 className="title">{title}</h2>
