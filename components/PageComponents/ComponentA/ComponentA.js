@@ -27,8 +27,16 @@ const List = styled.div`
   z-index: 2;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2em;
+
+  @media screen and (max-width: 1097px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 675px) {
+    grid-template-columns: 1fr;
+  }
 
   ul {
     padding: 2em;
@@ -45,7 +53,7 @@ const Bg = styled.div`
   grid-row: 2 / -1;
   grid-column: 2 / -1;
   z-index: 1;
-  background: #90ee80;
+  background: var(--clr-primary);
 `;
 
 const Item = styled.div`
@@ -53,7 +61,11 @@ const Item = styled.div`
   color: var(--txt-light);
   text-decoration: none;
 
-  div {
+  figure {
+    div {
+      img {
+      }
+    }
   }
 `;
 
@@ -96,7 +108,7 @@ export default function ComponentA({ subheader, title, body, componentItems }) {
   let width = "100%";
   let height = "400px";
   return (
-    <Section>
+    <Section id="memberships">
       <div className="spacing">
         <Container>
           <Text className="spacing">
@@ -125,7 +137,7 @@ export default function ComponentA({ subheader, title, body, componentItems }) {
                     width={width}
                     height={height}
                   />
-                  <Inner>
+                  <Inner className="spacing">
                     <h3 className="subheader">{item.title}</h3>
                     {item.text ? (
                       <div
@@ -152,26 +164,3 @@ export default function ComponentA({ subheader, title, body, componentItems }) {
     </Section>
   );
 }
-
-// const ComponentA = ({ subheader, title, body, componentItems }) => {
-//   return (
-//     <div>
-//       <p>{subheader}</p>
-//       <h2>{title}</h2>
-//       {body ? <div dangerouslySetInnerHTML={{ __html: body }} /> : null}
-//       {componentItems.length &&
-//         componentItems.map((item) => {
-//           return (
-//             // eslint-disable-next-line react/jsx-key
-//             <div>
-//               <h3>{item.title}</h3>
-//               <p>{item.text}</p>
-//               {item.button ? <div dangerouslySetInnerHTML={{ __html: item.button }} /> : null}
-//             </div>
-//           );
-//         })}
-//     </div>
-//   );
-// };
-
-// export default ComponentA;

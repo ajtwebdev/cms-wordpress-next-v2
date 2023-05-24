@@ -20,7 +20,7 @@ const FormWrapper = styled.div`
 
 export default function FormContact(props) {
   return (
-    <Section>
+    <Section id="contact">
       <Container>
         <div>
           <h3 className="title center">Get in touch</h3>
@@ -71,7 +71,6 @@ export default function FormContact(props) {
                 required
               />
             </div>
-            <hr />
             <div className="spacing-sm">
               <Label htmlFor="msg">* Message:</Label>
               <TextArea

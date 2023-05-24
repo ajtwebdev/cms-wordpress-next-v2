@@ -30,13 +30,17 @@
   --txt-light-secondary: #f0f0f0;
   --txt-body: #333333;
 
-  --clr-dark: ##1a1a1a;
+  --clr-dark: #1a1a1a;
+  --clr-dark-lighter: #343434;
+  --clr-primary: #90ee80;
+  --clr-primary-lighter: #c3facc;
+  /* --clr-primary: #5845b1;
+  --clr-primary-lighter: #7f62fc; */
   --clr-light: #fff;
   --clr-light-secondary: #f0f0f0;
   --clr-accent: #3fd9ff;
   --clr-accent-lighter: #59dcfd;
   --clr-accent-darker: #2acff8;
-  --clr-tan: #5845b1;
   --clr-overlay: rgba(0, 0, 0, 0.6);
   --clr-overlay-darker: rgba(0, 0, 0, 0.8);
 
@@ -71,7 +75,7 @@
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   background: #fff;
 }
 
@@ -127,7 +131,7 @@ hr {
 .title {
   font-family: var(--ff-alfa);
   font-size: var(--fs-1);
-  font-weight: var(--fw-600);
+  font-weight: var(--fw-900);
   text-transform: uppercase;
   line-height: 1;
 }

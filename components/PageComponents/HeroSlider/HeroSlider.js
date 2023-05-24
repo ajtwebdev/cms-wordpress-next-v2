@@ -1,166 +1,141 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  ButtonPrimary,
-  ButtonSecondaryLight,
-  ButtonSecondary,
-} from "components/buttons";
-import {
-  Actions,
   Container,
+  Actions,
   HeroBannerPadding,
 } from "components/layoutComponents";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Carousel } from "react-bootstrap";
+import { ButtonPrimary, ButtonSecondaryLight } from "components/buttons";
 
-const Wrapper = styled.div`
-  p {
-    margin-bottom: 0;
-  }
-
-  .carousel-indicators {
-    margin-bottom: 4rem;
-  }
-`;
-
-const HeroGrid = styled.div`
-  display: grid;
-  grid-template-rows: auto 4em auto;
-`;
-
-const HeroWrapper = styled.div`
-  grid-row: 1 / span 2;
-  grid-column: 1 / -1;
-  z-index: 1;
-`;
-
-const Content = styled.div`
-  position: relative;
-
-  &:before {
-    content: "";
-    position: absolute;
-    background: rgba(0, 0, 0, 0.1);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-`;
-
-const Content1 = styled.div`
-  background: url("https://unsplash.com/photos/Im7lZjxeLhg"), rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
-  background-position: center;
-  height: 85vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-const Content2 = styled.div`
-  background: url("https://unsplash.com/photos/Im7lZjxeLhg"), rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
-  background-position: center;
-  height: 85vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-const Content3 = styled.div`
-  background: url("https://unsplash.com/photos/Im7lZjxeLhg"), rgba(0, 0, 0, 0.4);
-  background-blend-mode: overlay;
-  background-position: center;
-  height: 85vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-
-const captionStyle = {
-  textAlign: "left",
-  display: "flex",
-  alignItems: "center",
-  height: "90%",
-  left: "12%",
-  color: "var(--txt-light)",
+const device = {
+  md: "60em",
 };
 
+const Wrapper = styled.div`
+  position: relative;
+  padding: 4em 0;
+  background: var(--clr-primary);
+  display: grid;
+  place-items: center;
+
+  min-height: 80vh;
+  height: 100%;
+`;
+
+const Flex = styled.div`
+  display: flex;
+  align-items: center;
+  img {
+    /* width: 100%; */
+  }
+  @media screen and (max-width: ${device.md}) {
+    flex-direction: column;
+  }
+
+  & > * {
+    width: 100%;
+  }
+
+  & > * + * {
+    margin-left: 2em;
+
+    @media screen and (max-width: ${device.md}) {
+      margin-left: 0;
+      margin-top: var(--spacer);
+    }
+  }
+`;
+
+const Text = styled.div`
+  max-width: 140ch;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  h1 {
+    color: var(--txt-dark);
+  }
+  p {
+    color: var(--txt-dark);
+  }
+
+  @media screen and (max-width: ${device.md}) {
+    text-align: center;
+  }
+`;
+
+const Video = styled.div`
+  padding: 30% 0 0 0;
+  box-shadow: 10px 10px 0px 1px var(--clr-light);
+
+  @media screen and (max-width: 1197px) {
+    padding: 50% 0 0 0;
+  }
+`;
+
+const Actions1 = styled.div`
+  @media screen and (max-width: ${device.md}) {
+    display: none;
+  }
+`;
+const Actions2 = styled.div`
+  @media screen and (min-width: ${device.md}) {
+    display: none;
+  }
+`;
+
 export default function HeroSlider({ title }) {
+  let width = "100%";
+  let height = "auto";
   return (
-    <Wrapper>
+    <div>
       <HeroBannerPadding />
-      <HeroGrid>
-        <HeroWrapper>
-          <Carousel>
-            <Carousel.Item interval={5000}>
-              <Content>
-                <Content1 className="d-block w-100" />
-              </Content>
-              <Carousel.Caption style={captionStyle} className="spacing">
-                <div className="spacing">
-                  <h1 className="title">
-                    Take Your Gameplay to the Next Level with Neuroscience.
-                  </h1>
-                  <p className="">
-                    By using neuroscience to get in-game feedback, you can
-                    unleash your cognitive potential and take your gameplay to
-                    the next level.
-                  </p>
-                  <Actions>
-                    <ButtonSecondaryLight href="/">
-                      order now
-                    </ButtonSecondaryLight>
-                    <ButtonPrimary href="/contact">contact us</ButtonPrimary>
-                  </Actions>
-                </div>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={5000}>
-              <Content>
-                <Content2 className="d-block w-100" />
-              </Content>
-              <Carousel.Caption style={captionStyle} className="spacing">
-                <div className="spacing">
-                  <h2 className="title">
-                    Neurofeedback is a Game-Changer. Literally.
-                  </h2>
-                  <p className="">
-                    By monitoring your brain activity during gameplay and
-                    actively working to change it, you can systematically take
-                    your skills to the next level.
-                  </p>
-                  <Actions>
-                    <ButtonSecondaryLight href="/">
-                      order now
-                    </ButtonSecondaryLight>
-                    <ButtonPrimary href="/contact">contact us</ButtonPrimary>
-                  </Actions>
-                </div>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item interval={5000}>
-              <Content>
-                <Content3 className="d-block w-100" />
-              </Content>
-              <Carousel.Caption style={captionStyle} className="spacing">
-                <div className="spacing">
-                  <h2 className="title">
-                    Optimize Your Mental State for Peak Gaming Performance
-                  </h2>
-                  <p className="">
-                    Our headband is designed to read your brain’s electrical
-                    activity, offering you in-game feedback to give you a
-                    competitive edge.
-                  </p>
-                  <Actions>
-                    <ButtonSecondaryLight href="/">
-                      order now
-                    </ButtonSecondaryLight>
-                    <ButtonPrimary href="/contact">contact us</ButtonPrimary>
-                  </Actions>
-                </div>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-        </HeroWrapper>
-      </HeroGrid>
-    </Wrapper>
+      <Wrapper>
+        <Container className="spacing">
+          <Flex>
+            <Text className="spacing-md">
+              <h1 className="title">
+                Neurofeedback is a{" "}
+                <span className="italics light">Game-Changer.</span> Literally.
+              </h1>
+              <p className="">
+                By monitoring your brain activity during gameplay and actively
+                working to change it, you can systematically take your skills to
+                the next level.
+              </p>
+              <Actions1>
+                <Actions>
+                  <ButtonSecondaryLight href="/contact">
+                    order now
+                  </ButtonSecondaryLight>
+                  <ButtonPrimary href="/contact">contact us</ButtonPrimary>
+                </Actions>
+              </Actions1>
+            </Text>
+            <Video style={{ position: "relative" }}>
+              <iframe
+                src="https://www.youtube.com/embed/OrBiQzvwO_o"
+                frameBorder={0}
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="Home Page Nudes-1080p.mp4"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            </Video>
+          </Flex>
+          <Actions2>
+            <Actions>
+              <ButtonSecondaryLight href="/">order now</ButtonSecondaryLight>
+              <ButtonPrimary href="#contact">contact us</ButtonPrimary>
+            </Actions>
+          </Actions2>
+        </Container>
+      </Wrapper>
+    </div>
   );
 }

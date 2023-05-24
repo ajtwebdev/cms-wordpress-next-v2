@@ -14,6 +14,16 @@ const ImgStyle = {
   boxShadow: "-20px 20px 0px 1px var(--clr-accent)",
 };
 
+const Img = styled.div`
+  figure {
+    div {
+      img {
+        box-shadow: -20px 20px 0px 1px var(--clr-accent);
+      }
+    }
+  }
+`;
+
 export default function ImageLeft({
   subheader,
   title,
@@ -26,7 +36,7 @@ export default function ImageLeft({
   let height = "600px";
 
   return (
-    <Section>
+    <Section id="about">
       <Container>
         <FlexMobileOpp>
           <Image
@@ -48,7 +58,7 @@ export default function ImageLeft({
             {button && link ? (
               <ButtonPrimary href={link}>{button}</ButtonPrimary>
             ) : (
-              <ButtonPrimary href="/contact">get started</ButtonPrimary>
+              <ButtonPrimary href="/">order now</ButtonPrimary>
             )}
           </Text>
         </FlexMobileOpp>

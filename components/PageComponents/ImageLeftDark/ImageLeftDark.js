@@ -23,7 +23,13 @@ const Text = styled.div`
 // `
 
 const Img = styled.div`
-  // box-shadow: -20px 20px 0px 1px var(--clr-tan);
+  figure {
+    div {
+      img {
+        box-shadow: -20px 20px 0px 1px var(--clr-primary);
+      }
+    }
+  }
 `;
 
 export default function ImageLeftDark({
@@ -50,6 +56,7 @@ export default function ImageLeftDark({
                 height={height}
               />
             </Img>
+
             <Text className="spacing">
               <div>
                 <p className="subheader accent">{subheader} </p>
@@ -65,9 +72,7 @@ export default function ImageLeftDark({
                   {button}
                 </ButtonSecondaryLight>
               ) : (
-                <ButtonSecondaryLight href="/contact">
-                  get started
-                </ButtonSecondaryLight>
+                <ButtonSecondaryLight href="/">order now</ButtonSecondaryLight>
               )}
             </Text>
           </FlexMobileOpp>

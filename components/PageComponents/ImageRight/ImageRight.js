@@ -10,9 +10,15 @@ const Text = styled.div``;
 //   box-shadow: 20px 20px 0px 1px var(--clr-accent);
 // `
 
-const ImgStyle = {
-  boxShadow: "20px 20px 0px 1px var(--clr-accent)",
-};
+const Img = styled.div`
+  figure {
+    div {
+      img {
+        box-shadow: 20px 20px 0px 1px var(--clr-accent);
+      }
+    }
+  }
+`;
 
 export default function ImageRight({
   subheader,
@@ -26,7 +32,7 @@ export default function ImageRight({
   let height = "600px";
 
   return (
-    <Section>
+    <Section id="how-it-works">
       <Container>
         <Flex>
           <Text className="spacing">
@@ -45,15 +51,17 @@ export default function ImageRight({
             {button && link ? (
               <ButtonPrimary href={link}>{button}</ButtonPrimary>
             ) : (
-              <ButtonPrimary href="/contact">get started</ButtonPrimary>
+              <ButtonPrimary href="/">order now</ButtonPrimary>
             )}
           </Text>
-          <Image
-            alt={image.altText || ""}
-            srcSet={image.srcSet}
-            width={width}
-            height={height}
-          />
+          <Img>
+            <Image
+              alt={image.altText || ""}
+              srcSet={image.srcSet}
+              width={width}
+              height={height}
+            />
+          </Img>
         </Flex>
       </Container>
     </Section>

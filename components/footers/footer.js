@@ -42,7 +42,7 @@ const Wrapper = styled.footer``;
 
 const FooterWrapperTop = styled.div`
   padding: 4em 0 4em 0;
-  background: var(--clr-dark);
+  background: var(--clr-primary);
 
   h4 {
     color: var(--clr-tan);
@@ -62,7 +62,7 @@ const FooterWrapperBottom = styled.div`
   background: #1a1a1a;
 
   h4 {
-    color: var(--clr-tan);
+    color: var(--clr-primary);
   }
 
   ul {

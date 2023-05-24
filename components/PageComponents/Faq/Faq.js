@@ -12,21 +12,36 @@ import styled from "styled-components";
 import { ButtonPrimary, ButtonSecondaryLight } from "components/buttons";
 
 const Wrapper = styled.div`
-  background: url("http://www.gameflo-wp.purpleparrotwebsites.com/wp-content/uploads/woocommerce-placeholder.png"),
+  background: url("http://www.gameflo-wp.purpleparrotwebsites.com/wp-content/uploads/2023/05/pro-gamers.jpeg"),
     rgba(255, 255, 255, 0.8);
   background-blend-mode: overlay;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--txt-light);
+  h2 {
+    color: var(--txt-dark);
+  }
 `;
 
 const AccordionStyle = {
-  background: "#90EE80",
+  background: "var(--clr-primary)",
+  borderRadius: "var(--br)",
+  border: "none",
+  maxWidth: "800px",
+  color: "var(--txt-dark)",
+  textAlign: "left",
+  padding: "0 20px 0 20px",
+};
+const AccordionStyleButton = {
+  background: "var(--clr-primary)",
   borderRadius: "var(--br)",
   border: "none",
   maxWidth: "600px",
   color: "var(--txt-dark)",
+  textAlign: "left",
+  padding: "10px 0 10px 3px",
+  cursor: "pointer",
 };
 
 export default function FaqFeatured({ title, body, questions }) {
@@ -35,13 +50,13 @@ export default function FaqFeatured({ title, body, questions }) {
       <Section>
         <center>
           <Container className="spacing">
-            <h2 className="title tan">{title}</h2>
+            <h2 className="title">{title}</h2>
             <Accordion className="spacing">
               {questions.map((item) => {
                 return (
                   <AccordionItem style={AccordionStyle}>
                     <h2>
-                      <AccordionButton style={AccordionStyle}>
+                      <AccordionButton style={AccordionStyleButton}>
                         <Box
                           className="subheader"
                           as="span"
@@ -63,7 +78,7 @@ export default function FaqFeatured({ title, body, questions }) {
                 );
               })}
             </Accordion>
-            <ButtonPrimary href="/">shop now</ButtonPrimary>
+            <ButtonPrimary href="/">order now</ButtonPrimary>
           </Container>
         </center>
       </Section>

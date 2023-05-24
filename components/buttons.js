@@ -149,10 +149,7 @@ export const ButtonInline = styled((props) => <Link {...props} />)`
   cursor: pointer;
   display: inline-block;
   color: var(--txt-dark);
-  text-decoration: none;
-  &:hover {
-    color: var(--txt-dark);
-  }
+  text-decoration: underline;
 `;
 
 // Anchors

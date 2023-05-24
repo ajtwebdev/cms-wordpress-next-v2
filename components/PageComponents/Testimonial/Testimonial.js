@@ -10,7 +10,7 @@ const ReviewWrapper = styled.div`
   border: 1px solid var(--clr-accent);
   border-radius: var(--br);
   padding: 2em;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   color: var(--txt-light);
   text-align: center;
 
@@ -24,13 +24,16 @@ const ReviewWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: url("http://www.gameflo-wp.purpleparrotwebsites.com/wp-content/uploads/woocommerce-placeholder.png");
+  background: url("http://www.gameflo-wp.purpleparrotwebsites.com/wp-content/uploads/2023/05/fredrick-tendong-6ou8gWpS9ns-unsplash-scaled.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 `;
 
 const SliderWrapper = styled.div`
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
   .slick-prev:before,
   .slick-next:before {
     color: var(--clr-accent);
@@ -77,7 +80,7 @@ export default function Testimonial({ title, testimonials }) {
     slidesToScroll: 1,
   };
   return (
-    <Wrapper>
+    <Wrapper id="testimonials">
       <Section>
         <Container>
           <SliderWrapper>

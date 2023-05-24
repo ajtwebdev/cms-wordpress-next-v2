@@ -31,17 +31,21 @@ export default function Badges({ title }) {
   };
   return (
     <Wrapper>
-      <div className="spacing">
-        {title ? <h2 className="title center">{title}</h2> : null}
-        <center>
-          <Image
-            src="/brag-bar.png"
-            alt="video game logos"
-            width={600}
-            height={400}
-          />
-        </center>
-      </div>
+      <Container>
+        <div className="spacing-lg">
+          <h2 className="subheader italics center">
+            GameFlo is designed to work with any genre of video game.
+          </h2>
+          <center>
+            <Image
+              src="/brag-bar.png"
+              alt="video game logos"
+              width={600}
+              height={400}
+            />
+          </center>
+        </div>
+      </Container>
     </Wrapper>
   );
 }

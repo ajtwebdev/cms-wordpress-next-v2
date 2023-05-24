@@ -10,7 +10,7 @@ import Image from "../../Image";
 // `
 
 const BenefitItem = styled.div`
-  border: 2px solid #90ee80;
+  border: 2px solid var(--clr-primary);
   padding: 2em;
   border-radius: var(--br);
 
@@ -23,6 +23,16 @@ const BenefitItem = styled.div`
       color: var(--txt-body);
     }
   }
+
+  figure {
+    div {
+      img {
+        height: 400px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 `;
 
 export default function Benefits1({ subheader, title, benefitContent }) {
@@ -33,7 +43,7 @@ export default function Benefits1({ subheader, title, benefitContent }) {
       <Container className="spacing-md">
         <div className="center">
           <p className="subheader accent">{subheader}</p>
-          <h2 className="title">{title}</h2>
+          <h2 className="title"></h2>
         </div>
         <GridThree>
           {benefitContent.map((benefit) => {

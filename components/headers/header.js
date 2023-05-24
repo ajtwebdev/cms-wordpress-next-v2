@@ -19,11 +19,16 @@ const Header = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  // box-shadow: var(--shadow-bottom);
 `;
 
 const Headertop = styled.div`
   padding: 1em 0;
-  background: #90ee80;
+  background: var(--clr-primary);
+
+  p {
+    color: var(--txt-dark);
+  }
 
   ul {
     display: flex;
@@ -68,7 +73,7 @@ const NavLinkTop = styled.a`
 `;
 
 const Headerbottom = styled.div`
-  background: #c3facc;
+  background: var(--clr-primary-lighter);
   padding: 1em 0;
   .container {
     display: flex;
@@ -491,24 +496,26 @@ export default function HeaderTest() {
               </Burger>
               <NavList nav={nav}>
                 <li>
-                  <StyledLink href="/">how it works</StyledLink>
+                  <StyledLink href="#how-it-works">how it works</StyledLink>
                 </li>
                 <li>
-                  <StyledLink href="/">getting started</StyledLink>
+                  <StyledLink href="#getting-starter">
+                    getting started
+                  </StyledLink>
                 </li>
                 <li>
-                  <StyledLink href="/">memberships</StyledLink>
+                  <StyledLink href="#memberships">memberships</StyledLink>
                 </li>
                 <li>
-                  <StyledLink href="/">testimonials</StyledLink>
+                  <StyledLink href="#testimonials">testimonials</StyledLink>
                 </li>
                 <li>
-                  <StyledLink href="/">about</StyledLink>
+                  <StyledLink href="#about">about</StyledLink>
                 </li>
                 <li>
-                  <StyledLink href="/">contact</StyledLink>
+                  <StyledLink href="#contact">contact</StyledLink>
                 </li>
-                <GetQuote href="/">book demo &#8594;</GetQuote>
+                <GetQuote href="/">order now &#8594;</GetQuote>
               </NavList>
             </Nav>
           </Container>

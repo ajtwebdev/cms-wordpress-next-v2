@@ -36,7 +36,7 @@ export default function ComponentC({ subheader, title, body, image }) {
   let width = "100%";
   let height = "auto";
   return (
-    <Section>
+    <Section id="getting-started">
       <Container className="spacing center ">
         <Text className="spacing">
           <div className="">
@@ -60,8 +60,8 @@ export default function ComponentC({ subheader, title, body, image }) {
         ) : null}
         <center>
           <Actions>
-            <ButtonSecondary href="/contact">order now</ButtonSecondary>
-            <ButtonPrimary href="/contact">contact us</ButtonPrimary>
+            <ButtonSecondary href="/">order now</ButtonSecondary>
+            <ButtonPrimary href="#">contact us</ButtonPrimary>
           </Actions>
         </center>
       </Container>
